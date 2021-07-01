@@ -27,9 +27,9 @@ color: 'yelow',
 ```
 
 **example hit :**
-[get food data](https://ahmdosbh-basic-api-server-prod.herokuapp.com/api/v1/food)
+[get food data](https://ahmadosbeh-api-server.herokuapp.com/api/v1/food)
 
-- https://ahmdosbh-basic-api-server-prod.herokuapp.com/api/v1/food
+- https://ahmadosbeh-api-server.herokuapp.com/api/v1/food
 
   2- clothes
 
@@ -40,21 +40,21 @@ let obj = {
 type: 'T-shirt',
 color: 'white',
 };
-http://localhost:3003/api/v1/clothes
+
 
 ```
 
 **example hit :**
-[get food data](https://ahmdosbh-basic-api-server-prod.herokuapp.com/api/v1/clothes)
+[get food data](https://ahmadosbeh-api-server.herokuapp.com/api/v1/clothes)
 
-- https://ahmdosbh-basic-api-server-prod.herokuapp.com/api/v1/clothes
+- https://ahmadosbeh-api-server.herokuapp.com/api/v1/clothes
 
 - Returns : json with requested data
 
 ```
 
 {
-"domain": "https://ahmdosbh-basic-api-server-prod.herokuapp.com/",
+"domain": "https://ahmadosbeh-api-server.herokuapp.com/",
 "status": "running",
 "port": 3003
 }
@@ -63,7 +63,7 @@ http://localhost:3003/api/v1/clothes
 
 # PR link
 
-[PR link](https://github.com/Ahmad-AbuOsbeh/basic-api-server/pull/1)
+[PR link](https://github.com/Ahmad-AbuOsbeh/api-server/pull/1)
 
 **Tests**
 
