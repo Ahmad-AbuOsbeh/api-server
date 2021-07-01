@@ -49,12 +49,12 @@ describe('ALL FOOD ROUTES TESTS', () => {
     test('GET all records data test', async () => {
       const response = await supergoose(server.app).get('/api/v1/food');
       //   console.log('response', response);
-      id = response.body[0].id;
-      console.log('response.body[0].data', response.body[0]);
-      console.log(
-        'response.body[0].data.stringify()',
-        JSON.stringify(response.body[0].data)
-      );
+      id = response.body[0]._id;
+      console.log('response.body to seee idddddddddddddddddddd', response.body);
+      // console.log(
+      //   'response.body[0].data.stringify()',
+      //   JSON.stringify(response.body[0].data)
+      // );
 
       expect(response.body.length).toBeTruthy();
     });
@@ -62,9 +62,9 @@ describe('ALL FOOD ROUTES TESTS', () => {
 
   //Read a record using GET (Food route)
   describe('Read a record using GET  (Food route)', () => {
-    xtest('GET one record status test', async () => {
+    test('GET one record status test', async () => {
       const response = await supergoose(server.app).get(`/api/v1/food/1/${id}`);
-      //   console.log('response', response);
+      // console.log('response from get oneeee', response);
       expect(response.status).toBe(200);
     });
 
@@ -78,7 +78,8 @@ describe('ALL FOOD ROUTES TESTS', () => {
       //   JSON.stringify(response.body[0].data)
       // );
 
-      expect(response.body._id).toEqual(id);
+      // expect(response.status).toBe(200);
+      expect(response.body[0]._id).toEqual(id);
     });
   });
 
@@ -88,7 +89,7 @@ describe('ALL FOOD ROUTES TESTS', () => {
       type: 'Updated banana',
       color: 'Updated yelow',
     };
-    xtest('PUT status test', async () => {
+    test('PUT status test', async () => {
       const response = await supergoose(server.app)
         .put(`/api/v1/food/1/${id}`)
         .send(obj);
@@ -114,7 +115,7 @@ describe('ALL FOOD ROUTES TESTS', () => {
 
   //Destroy a record using DELETE (Food route)
   describe('Destroy a record using DELETE  (Food route)', () => {
-    xtest('DELETE one record status test', async () => {
+    test('DELETE one record status test', async () => {
       const response = await supergoose(server.app).delete(
         `/api/v1/food/1/${id}`
       );
@@ -134,7 +135,7 @@ describe('ALL FOOD ROUTES TESTS', () => {
       //   JSON.stringify(response.body[0].data)
       // );
 
-      expect(response.body._id).toEqual(id);
+      expect(response.body).toEqual(null);
     });
   });
 });
@@ -190,7 +191,7 @@ describe('ALL CLOTHES ROUTES TESTS', () => {
     test('GET all records data test', async () => {
       const response = await supergoose(server.app).get('/api/v1/clothes');
       //   console.log('response', response);
-      id = response.body[0].id;
+      id = response.body[0]._id;
       console.log('response.body[0].data', response.body[0]);
       console.log(
         'response.body[0].data.stringify()',
@@ -203,7 +204,7 @@ describe('ALL CLOTHES ROUTES TESTS', () => {
 
   //Read a record using GET (clothes route)
   describe('Read a record using GET  (clothes route)', () => {
-    xtest('GET one record status test', async () => {
+    test('GET one record status test', async () => {
       const response = await supergoose(server.app).get(
         `/api/v1/clothes/1/${id}`
       );
@@ -223,7 +224,7 @@ describe('ALL CLOTHES ROUTES TESTS', () => {
       //   JSON.stringify(response.body[0].data)
       // );
 
-      expect(response.body._id).toEqual(id);
+      expect(response.body[0]._id).toEqual(id);
     });
   });
 
@@ -233,7 +234,7 @@ describe('ALL CLOTHES ROUTES TESTS', () => {
       type: 'Updated T-shirt',
       color: 'Updated white',
     };
-    xtest('PUT status test', async () => {
+    test('PUT status test', async () => {
       const response = await supergoose(server.app)
         .put(`/api/v1/clothes/1/${id}`)
         .send(obj);
@@ -259,7 +260,7 @@ describe('ALL CLOTHES ROUTES TESTS', () => {
 
   //Destroy a record using DELETE (clothes route)
   describe('Destroy a record using DELETE  (clothes route)', () => {
-    xtest('DELETE one record status test', async () => {
+    test('DELETE one record status test', async () => {
       const response = await supergoose(server.app).delete(
         `/api/v1/clothes/1/${id}`
       );
@@ -279,7 +280,7 @@ describe('ALL CLOTHES ROUTES TESTS', () => {
       //   JSON.stringify(response.body[0].data)
       // );
 
-      expect(response.body._id).toEqual(id);
+      expect(response.body).toEqual(null);
     });
   });
 });
